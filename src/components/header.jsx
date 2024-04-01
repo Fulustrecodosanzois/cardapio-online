@@ -5,6 +5,7 @@ import { Card } from "./ui/card";
 import { ShoppingCart } from "lucide-react"
 import Image from 'next/image';
 import Link from 'next/link';
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 const Header = () => {
     return (  
@@ -13,9 +14,17 @@ const Header = () => {
                 <Image src="/logo.png" alt="Logo" width={78.66} height={39} />
             </Link>          
             
-            <Button className="bg-primary" size="icon" variant="outline">
-                <ShoppingCart className="text-[#fff]"/>
-            </Button>
+            <Sheet>
+                <SheetTrigger asChild>
+                    <Button className="bg-primary" size="icon" variant="outline">
+                        <ShoppingCart className="text-[#fff]"/>
+                    </Button>
+                </SheetTrigger>
+
+                <SheetContent>
+                    <h1>Carrinho = mudar depois</h1>
+                </SheetContent>
+            </Sheet>
         </Card>         
 )}
  
