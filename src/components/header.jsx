@@ -9,7 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 const Header = () => {
     return (  
-        <Card className="bg-primary flex justify-between align-items-center p-[30px]">
+        <Card className="bg-primary flex justify-between align-items-center p-[30px] rounded-none">
             <Link href="/">
                 <Image src="/logo.png" alt="Logo" width={78.66} height={39} />
             </Link>          

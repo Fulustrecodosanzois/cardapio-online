@@ -1,5 +1,6 @@
 "use client";
 
+import Categorias from "@/components/categorias";
 import Image from "next/image"
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
                 className="h-auto w-full"
                 sizes="100vw"
             />
+            <Categorias/>
         </div>
     )
 };

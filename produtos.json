@@ -1,0 +1,234 @@
+/* arquivo para popular o banco de dados, ainda decidindo entre nosql ou sql*/
+
+[
+    {
+      "Id": 1,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza Calabresa",
+      "Slug": "calabresa",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fcalabresa.png?alt=media&token=3cec3f16-829e-43b6-aedf-b6e397b01224",
+      "Descricao": "Molho, mussarela, calabresa, tomate, cebola, pimentão, azeitona, orégano.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 2,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza Mussarela",
+      "Slug": "mussarela",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fmussarela.png?alt=media&token=f5fe0ee5-cc6d-4f5e-9ebf-0a1d9f217e7b",
+      "Descricao": "Molho, Mussarela, Tomate, Manjericão, Azeitonas pretas, Orégano, Azeite de oliva.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 3,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza Portuguesa",
+      "Slug": "portuguesa",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fportuguesa.png?alt=media&token=fe26be2d-486f-47a8-95f4-8b4bd555d33a",
+      "Descricao": "Molho, Mussarela, Presunto, Ovo, Cebola, Pimentão, Azeitonas pretas, Orégano.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 4,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza Napolitana",
+      "Slug": "napolitana",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fnapolitana.png?alt=media&token=be44f379-81be-4850-8c3f-d7814070bc32",
+      "Descricao": "Molho, Mussarela, Presunto, Tomate, Cebola, Pimentão, Azeitonas, Orégano.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 5,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza de Frango",
+      "Slug": "frango",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Ffrango.png?alt=media&token=6f251a33-cefa-4ece-b0f3-dacc12b2faca",
+      "Descricao": "Molho, Mussarela, Frango, Caturiry, Tomate, Cebola, Pimentão, Azeitonas, Orégano.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 6,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza de Bacon",
+      "Slug": "bacon",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fbacon.png?alt=media&token=af3f65c1-ea1c-426b-8cc8-7f06e21382b3",
+      "Descricao": "Molho, Mussarela, Bacon, Cebola, Tomate, Azeitonas, Orégano, Manjericão.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 7,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza de Banana",
+      "Slug": "banana",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fbanana.png?alt=media&token=f6fc050f-01ec-4397-98df-d76b6d69168d",
+      "Descricao": "Molho, Mussarela, Banana, Canela, Açúcar mascavo, Queijo cremoso, Orégano.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 8,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza Hot-Dog",
+      "Slug": "hotdog",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fhot%20dog.png?alt=media&token=5c601fff-c503-4869-8df8-5dbd58d95d44",
+      "Descricao": "Molho, Mussarela, Salsicha, Milho, Purê de batata, Ketchup, Mostarda, Batata palha.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 9,
+      "nomeCategoria": "Pizza Tradicional",
+      "Nome": "Pizza de Milho e Ervilha",
+      "Slug": "milho-e-ervilha",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-tradicional%2Fmilho%20e%20ervilha.png?alt=media&token=fd73c5a9-5b29-4f1e-8e57-369667980e8a",
+      "Descricao": "Molho, Mussarela, Milho, Ervilha, Cebola, Pimentão, Azeitonas, Orégano.",
+      "PrecoF": 40.00,
+      "PrecoM": 35.00,
+      "PrecoP": 25.00
+    },
+    {
+      "Id": 10,
+      "nomeCategoria": "Pizza Especial",
+      "Nome": "Pizza de Camarão",
+      "Slug": "camarao",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-especial%2Fcamar%C3%A3o.png?alt=media&token=07cf85fa-9295-4a10-8569-f8df35ebbb34",
+      "Descricao": "Molho, Mussarela, Camarão, Cebola, Tomate, Pimentão, Azeitonas, Orégano, Manjericão.",
+      "PrecoF": 50.00,
+      "PrecoM": 40.00,
+      "PrecoP": 30.00
+    },
+    {
+      "Id": 11,
+      "nomeCategoria": "Pizza Especial",
+      "Nome": "Pizza de Carne de Sol",
+      "Slug": "carne-de-sol",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-especial%2Fcarne%20de%20sol.png?alt=media&token=fd609b6f-1cde-4cf2-a4f1-7cd5934fa023",
+      "Descricao": "Molho, Mussarela, Carne de sol, Caturiry, Tomate, Cebola, Pimentão, Azeitonas, Orégano.",
+      "PrecoF": 50.00,
+      "PrecoM": 40.00,
+      "PrecoP": 30.00
+    },
+    {
+      "Id": 12,
+      "nomeCategoria": "Pizza Especial",
+      "Nome": "Pizza de Atum",
+      "Slug": "atum",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-especial%2Fatum.png?alt=media&token=f2cec0fc-9c1d-433d-a543-504301bdc05a",
+      "Descricao": "Molho, Mussarela, Atum, Cebola, Tomate, Azeitonas pretas, Orégano, Manjericão.",
+      "PrecoF": 50.00,
+      "PrecoM": 40.00,
+      "PrecoP": 30.00
+    },
+    {
+      "Id": 13,
+      "nomeCategoria": "Pizza Especial",
+      "Nome": "Pizza de Salame",
+      "Slug": "salame",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/pizza-especial%2Fsalame.png?alt=media&token=8884d10e-39b5-4ba7-a3bf-b393062a49bb",
+      "Descricao": "Molho, Mussarela, Salame, Cebola, Pimentão, Azeitonas pretas, Orégano, Manjericão.",
+      "PrecoF": 50.00,
+      "PrecoM": 40.00,
+      "PrecoP": 30.00
+    },
+    {
+      "Id": 14,
+      "nomeCategoria": "Lanches",
+      "Nome": "Hamburguer",
+      "Slug": "humburguer",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/lanches%2Fhamburguer.png?alt=media&token=953c4871-79ec-4306-b5e8-f580441394f5",
+      "Descricao": "Pão, Hambúrguer, Queijo, Presunto, Ovo, Bacon, Alface, Tomate, Cebola, pickles, Molho Secreto, Maionese, Ketchup",
+      "Preco": 15.00
+    },
+    {
+      "Id": 15,
+      "nomeCategoria": "Lanches",
+      "Nome": "Pastel de Carne",
+      "Slug": "pastel-de-carne",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/lanches%2Fpastel.png?alt=media&token=da88e735-4bb5-494e-9d95-79aeec69953e",
+      "Descricao": "Massa de pastel, Carne moída, Molho Especial.",
+      "Preco": 12.00
+    },
+    {
+      "Id": 16,
+      "nomeCategoria": "Lanches",
+      "Nome": "Batata Frita",
+      "Slug": "batata-frita",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/lanches%2Fbatata%20frita.png?alt=media&token=966a4164-6e80-43b5-adb6-bac9fb198557",
+      "Descricao": "300g de batata, Molho Especial",
+      "Preco": 10.00
+    },
+    {
+      "Id": 17,
+      "nomeCategoria": "Lanches",
+      "Nome": "Açaí",
+      "Slug": "acai",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/lanches%2Fa%C3%A7a%C3%AD.png?alt=media&token=5e8f8aa0-da40-4c40-a657-f66c0246e36a",
+      "Descricao": "770 ml de Açaí, Banana, Leite em pó, Castanhas, Morango, Uva, Granola",
+      "Preco": 10.00
+    },
+    {
+      "Id": 18,
+      "nomeCategoria": "Bebidas",
+      "Nome": "Refrigerante Jesus",
+      "Slug": "jesus",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/bebidas%2Fguarana-jesus.png?alt=media&token=f715af35-9b05-4c25-8b7d-f790bf93f102",
+      "Descricao": "Refrigerante",
+      "Preco2L": 10.00,
+      "Preco1L": 7.00
+    },
+    {
+      "Id": 19,
+      "nomeCategoria": "Bebidas",
+      "Nome": "Refrigerante Coca-cola",
+      "Slug": "coca-cola",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/bebidas%2Fcoca-cola.png?alt=media&token=f2de189a-62bb-4592-8c51-645185f0249c",
+      "Descricao": "Refrigerante",
+      "Preco2L": 10.00,
+      "Preco1L": 7.00
+    },
+    {
+      "Id": 20,
+      "nomeCategoria": "Bebidas",
+      "Nome": "Refrigerante Guaraná",
+      "Slug": "guarana",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/bebidas%2Fguarana.png?alt=media&token=4cff79b8-393e-4fba-8caf-89c4a625138b",
+      "Descricao": "Refrigerante",
+      "Preco2L": 10.00,
+      "Preco1L": 7.00
+    },
+    {
+      "Id": 21,
+      "nomeCategoria": "Bebidas",
+      "Nome": "Refrigerante Fanta Uva",
+      "Slug": "fanta-uva",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/bebidas%2Ffanta-uva.png?alt=media&token=eb626b90-03b0-4c02-8211-dd8d38e6e3a9",
+      "Descricao": "Refrigerante",
+      "Preco2L": 10.00,
+      "Preco1L": 7.00
+    },
+    {
+      "Id": 22,
+      "nomeCategoria": "Bebidas",
+      "Nome": "Refrigerante Fanta Laranja",
+      "Slug": "fanta-laranja",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/cardapio-online-4c9f0.appspot.com/o/bebidas%2Ffanta-laranja.png?alt=media&token=f150fb90-7cea-402c-95c9-8e6634e47fbe",
+      "Descricao": "Refrigerante",
+      "Preco2L": 10.00,
+      "Preco1L": 7.00
+    }
+  ]
+  
