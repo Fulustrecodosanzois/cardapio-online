@@ -16,7 +16,7 @@ export default function Home() {
                 sizes="100vw"
             />
             <Categorias/>
-            <Footer/>
+            
         </div>
         
     )
