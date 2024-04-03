@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Cardapio Online",
-  description: "Descubra uma variedade de pizzas artesanais deliciosas e acompanhamentos frescos. Peça online e desfrute do melhor sabor da cidade!",
+  description: "Descubra uma variedade de pizzas artesanais deliciosas e companhamentos frescos. Peça online e desfrute do melhor sabor da cidade!",
 };
 
 export default function RootLayout({ children }) {
