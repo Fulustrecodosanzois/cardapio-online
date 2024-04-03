@@ -1,6 +1,7 @@
 "use client";
 
 import Categorias from "@/components/categorias";
+import Footer from "@/components/footer";
 import Image from "next/image"
 
 export default function Home() {
@@ -15,6 +16,8 @@ export default function Home() {
                 sizes="100vw"
             />
             <Categorias/>
+            <Footer/>
         </div>
+        
     )
 };
