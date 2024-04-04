@@ -1,5 +1,3 @@
-/* arquivo para popular o banco de dados, ainda decidindo entre nosql ou sql*/
-
 [
     {
       "Id": 1,
