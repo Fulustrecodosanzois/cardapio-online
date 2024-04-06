@@ -14,7 +14,8 @@ const firebaseConfig = {
 console.log("Deu certo PORRA!")
 
 const firebaseApp = initializeApp(firebaseConfig);
-export default firebaseApp;
+const database = getDatabase(firebaseApp);
+
 
 
 
