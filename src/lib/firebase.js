@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAZSYz9uoXPd7kbx_ucvI6FBxlg7gzsRaM",
@@ -13,7 +14,9 @@ const firebaseConfig = {
 console.log("Deu certo PORRA!")
 
 const firebaseApp = initializeApp(firebaseConfig);
-export default firebaseApp;
+const database = getDatabase(firebaseApp);
+
+export default { firebaseApp, database, ref, onValue };
 
 
 
