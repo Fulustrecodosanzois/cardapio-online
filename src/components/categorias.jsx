@@ -11,8 +11,8 @@ const Categorias = () => {
         const categoriaRef = ref(db, 'categoria');
 
         const fetchCategorias = () => {
-            onValue(categoriaRef, (instantaneo) => {
-                const categoriasData = instantaneo.val();
+            onValue(categoriaRef, (capturarValor) => {
+                const categoriasData = capturarValor.val();
                 if (categoriasData) {
                     const categoriasArray = Object.entries(categoriasData).map(([key, value]) => ({
                         id: key,
@@ -33,40 +33,10 @@ const Categorias = () => {
     return (
         <div className="grid grid-cols-2 gap-y-2 gap-x-4 mt-5">
             {categorias.map((categoria) => (
-                <CategoriaItem key={categoria.id} categoria={categoria} />
+                <CategoriaItem key={categoria.nome} categoria={categoria} />
             ))}
         </div>
     );
 }
 
 export default Categorias;
-
-// // esse componente precisa pegar as categorias do banco de dados
-// import CategoriaItem from "./categoria-item";
-
-// const Categorias = () => {
-//     return (
-//         <div className="grid grid-cols-2 gap-y-2 gap-x-4 mt-5">
-//             <CategoriaItem label="Pizza Tradicional" />
-//             <CategoriaItem label="Lanches" />
-//             <CategoriaItem label="Bebidas" />
-//             <CategoriaItem label="Sobremesas" />
-//         </div>
-//     );
-// }
- 
-
-// import CategoriaItem from "./categoria-item";
-
-// const Categorias = () => {
-//     return (
-//         <div className="grid grid-cols-2 gap-y-2 gap-x-4 mt-5">
-//             <CategoriaItem label="Pizza Tradicional" icone="pizza" />
-//             <CategoriaItem label="Lanches" icone="lanches" />
-//             <CategoriaItem label="Bebidas" icone="bebidas" />
-//             <CategoriaItem label="Sobremesas" icone="sobremesas" />
-//         </div>
-//     );
-// }
- 
-// export default Categorias;

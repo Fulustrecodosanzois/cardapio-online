@@ -1,6 +1,7 @@
 "use client";
 
-import FirebaseCarousel from "@/components/carousel-principais";
+
+import CategoriasCarousel from "@/components/carousel-principais";
 import Categorias from "@/components/categorias";
 import Image from "next/image"
 
@@ -17,7 +18,7 @@ export default function Home() {
             />
             <Categorias/>
 
-            <FirebaseCarousel/>
+            <CategoriasCarousel/>
 
             
         </div>

@@ -1,38 +1,48 @@
-import React, { useEffect, useState } from "react";
-import {firebaseApp} from "@/lib/firebase.js";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import {firebaseApp} from "firebase/database";
+import { useEffect, useState } from 'react';
+import { getDatabase, ref, onValue, off } from "firebase/database";
+import firebaseApp from "@/lib/firebase";
+import { Carousel, CarouselContent } from './ui/carousel';
+import CarouselItems from './carousel-items';
 
-const CategoriasCarousel = () => {
+
+
+const CategoriasCarousel = ({ categoriaId }) => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    const database = firebaseApp.database();
-    const categoriasRef = database.ref("categorias");
+    const db = getDatabase(firebaseApp);
+    const categoriasRef = ref(db, 'categoria/Pizza Tradicional/dzxeelks4');
 
-    categoriasRef.on("value", (snapshot) => {
-      const categoriasData = snapshot.val();
-      const categoriasArray = Object.values(categoriasData);
-      setCategorias(categoriasArray);
-    });
+    const fetchCategorias = () => {
+      onValue(categoriasRef, (snapshot) => {
+          const categoriasData = snapshot.val();
+          if (categoriasData) {
+              const categoriasArray = Object.entries(categoriasData).map(([key, value]) => ({
+                  id: key,
+                  ...value
+              }));
+              setCategorias(categoriasArray);
+          }
+      });
+    };
+
+    fetchCategorias();
 
     return () => {
-      categoriasRef.off("value");
+        off(categoriasRef);
     };
-  }, []);
+
+    
+  }, [ categoriaId ]);
 
   return (
-    <Carousel>
-      <CarouselContent>
-        {categorias.map((categoria, index) => (
-          <CarouselItem key={index}>
-            <img src={categoria.imgUrl} alt={categoria.nome} />
-            <h3>{categoria.nome}</h3>
-            <p>{categoria.descricao}</p>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <Carousel className="my-5">
+            <CarouselContent className="px-5 flex gap-4">
+                {categorias.map((produto) => (
+                    <CarouselItems key={produto.Nome} produto={produto}/>
+                ))} 
+            </CarouselContent>
+        </Carousel>
   );
 };
 
