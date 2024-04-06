@@ -14,7 +14,7 @@ const firebaseConfig = {
 console.log("Deu certo PORRA!")
 
 const firebaseApp = initializeApp(firebaseConfig);
-const database = getDatabase(firebaseApp);
+
 
 
 
