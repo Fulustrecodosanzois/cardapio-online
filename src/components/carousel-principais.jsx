@@ -36,7 +36,7 @@ const CategoriasCarousel = ({ categoriaId }) => {
   }, [ categoriaId ]);
 
   return (
-    <Carousel className="my-5">
+    <Carousel className="">
             <CarouselContent className="p-3 flex gap-5 drop-shadow-md">
                 {categorias.map((produto) => (
                     <CarouselItems key={produto.Nome} produto={produto}/>
