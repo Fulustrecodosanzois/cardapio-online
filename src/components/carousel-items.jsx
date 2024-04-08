@@ -6,7 +6,7 @@ import { Card } from "./ui/card";
 const CarouselItems = ({ produto }) => {
     return (
         <Card className="flex flex-col border-hidden">
-            <div className="w-[167px] h-[250px] rounded-lg ">
+            <div className="w-[167px] h-[250px] rounded-lg">
                 <div className="flex align-items-center justify-center rounded-tl-lg gap-3 rounded-tr-lg bg-secondary-foreground w-[167px] h-[170px]">
                     <Image
                         src={produto.imgUrl}

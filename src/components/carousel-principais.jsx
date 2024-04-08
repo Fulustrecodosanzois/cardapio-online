@@ -37,7 +37,7 @@ const CategoriasCarousel = ({ categoriaId }) => {
 
   return (
     <Carousel className="my-5">
-            <CarouselContent className="px-5 flex gap-4">
+            <CarouselContent className="p-3 flex gap-5 drop-shadow-md">
                 {categorias.map((produto) => (
                     <CarouselItems key={produto.Nome} produto={produto}/>
                 ))} 
