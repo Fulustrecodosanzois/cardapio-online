@@ -11,7 +11,7 @@ const CategoriasCarousel = ({ categoriaId }) => {
 
   useEffect(() => {
     const db = getDatabase(firebaseApp);
-    const categoriasRef = ref(db, 'categoria/Pizza Tradicional/dzxeelks4');
+    const categoriasRef = ref(db, 'categoria/1_Pizza Tradicional/produtos');
 
     const fetchCategorias = () => {
       onValue(categoriasRef, (snapshot) => {
