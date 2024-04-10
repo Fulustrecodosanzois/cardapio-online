@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { ShoppingCartIcon } from '@heroicons/react/solid';
 import React from 'react';
+import CardPedido from "./produtos/card-pedido";
 
 
 
@@ -35,6 +36,8 @@ const Header = () => {
                         />
                         CARRINHO
                     </Button>
+
+                    <CardPedido/>
 
 
 
