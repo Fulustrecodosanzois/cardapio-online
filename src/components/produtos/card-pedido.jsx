@@ -1,4 +1,4 @@
-import { Card } from "../ui/card";
+// import { Card } from "../ui/card";
 import React from 'react';
 import Image from "next/image";
 import { Button } from "../ui/button";
@@ -12,23 +12,23 @@ const CardPedido = () => {
 
 
     return (
-        <div className="flex h-full p-2 bg-white rounded-lg shadow-md mt-4">
+        <div className="flex p-2 bg-white rounded-lg shadow-md mt-4">
             <div className="flex">
 
-                <div className="flex pe-5 ">
+                <div className="flex pe-2 ">
                     <Image
-                        src=""
+                        src="/pizzaCalabresa.jpg"
                         alt="Pizza calabresa com borda"
-                        width={80}
-                        height={80}
-                        className="rounded-lg object-cover justify-items-center"
+                        width={100}
+                        height={100}
+                        className=" object-cover"
                     />
 
                 </div>
 
                 <div>
 
-                    <div>
+                    <div className='truncate'>
                         <p>Pizza Calabreza com borda</p>
                     </div>
 
