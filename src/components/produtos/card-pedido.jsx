@@ -9,7 +9,7 @@ const CardPedido = () => {
 
 
     return (
-        <div className="flex bg-transparent mt-4">
+        <div className="flex bg-transparent mt-6">
 
             <div className="flex">
 
