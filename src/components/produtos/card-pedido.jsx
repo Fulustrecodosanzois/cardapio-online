@@ -18,8 +18,8 @@ const CardPedido = () => {
                         objectFit='cover'
                         src="/pizzaCalabresa.jpg"
                         alt="Pizza calabresa com borda"
-                        width={100}
-                        height={100}
+                        width={65}
+                        height={0}
                         className="w-full h-full object-cover rounded-lg"
                     />
 

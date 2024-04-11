@@ -26,18 +26,18 @@ const Header = () => {
                     </Button>
                 </SheetTrigger>
 
-                <SheetContent>
+                <SheetContent >
 
-                    <Button className="flex text-gray-500 font-bold py-2 px-4 pointer-events-none bg-transparent border border-black rounded-full">
+                    <Button className="flex text-gray-500 font-bold py-3 px-4 mt-6 pointer-events-none bg-transparent border border-black rounded-full">
                         <ShoppingCartIcon
                             variant="outline"
                             size="icon"
-                            className="h-5 w-5 text-gray-500 mr-2"
+                            className="h-5 w-5 text-gray-500 mr-3"
                         />
                         CARRINHO
                     </Button>
 
-                    <CardPedido />
+                    <CardPedido className="" />
 
 
 
@@ -46,6 +46,7 @@ const Header = () => {
 
 
                 </SheetContent>
+                
             </Sheet>
         </Card>
     )
