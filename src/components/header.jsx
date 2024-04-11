@@ -14,7 +14,7 @@ import CardPedido from "./produtos/card-pedido";
 
 const Header = () => {
     return (
-        <Card className="bg-primary flex justify-between align-items-center p-[30px] rounded-none">
+        <Card className="bg-primary flex justify-between align-items-center p-3 rounded-none">
             <Link href="/">
                 <Image src="/logo.png" alt="Logo" width={78.66} height={39} />
             </Link>
@@ -37,7 +37,7 @@ const Header = () => {
                         CARRINHO
                     </Button>
 
-                    <CardPedido/>
+                    <CardPedido />
 
 
 
