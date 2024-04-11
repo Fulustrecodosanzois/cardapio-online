@@ -9,23 +9,23 @@ const CardPedido = () => {
 
 
     return (
-        <div className="flex bg-white rounded-lg shadow-md mt-4">
+        <div className="flex bg-transparent rounded-lg mt-4">
 
             <div className="flex">
 
-                <div className="flex p-2 pe-2 ">
+                <div className="flex ">
                     <Image
                         objectFit='cover'
                         src="/pizzaCalabresa.jpg"
                         alt="Pizza calabresa com borda"
                         width={65}
                         height={0}
-                        className="w-full h-full object-cover rounded-lg"
+                        className="w-full h-auto object-cover rounded-lg"
                     />
 
                 </div>
 
-                <div className='gap-10'>
+                <div className='ps-3'>
 
                     <div className='flex flex-wrap truncate '>
                         <div>
@@ -38,16 +38,16 @@ const CardPedido = () => {
                     </div>
 
 
-                    <div className='flex justify-between mt-4'>
+                    <div className='flex justify-between h-16'>
 
-                        <div className=''>
-                            <Button className="bg-red-600">
-                                <Trash2 className='text-white'/>
+                        <div className='mt-3'>
+                            <Button className="bg-red-600 hover:bg-red-600 active:bg-gray-700 align-baseline">
+                                <Trash2 className='text-white' />
                             </Button>
                         </div>
 
 
-                        <div className="flex items-center mb-5">
+                        <div className="flex items-center mb-">
 
                             <Button
                                 className="bg-transparent w-9 h-9 border-black border-2 text-black "
