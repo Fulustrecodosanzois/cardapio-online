@@ -7,15 +7,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { ShoppingCartIcon } from '@heroicons/react/solid';
-import { useState, React } from 'react';
+import { React } from 'react';
 import CardPedido from "./produtos/card-pedido";
 import TipoEntrega from "./entrega/tipo-entrega";
 
 
 
 const Header = () => {
-
-    
 
 
     return (
@@ -46,6 +44,7 @@ const Header = () => {
                     <CardPedido className="" />
 
                     <TipoEntrega/>
+                    
 
 
 
