@@ -9,11 +9,11 @@ const CardPedido = () => {
 
 
     return (
-        <div className="flex bg-transparent mt-6">
+        <div className="flex bg-transparent pt-4">
 
-            <div className="flex">
+            <div className="flex items-center">
 
-                <div className=" ">
+                <div className=" sm:w-auto sm:mb-0 ">
                     <Image
                         objectFit="fill"
                         src="/pizzaCalabresa2.jpg"
@@ -29,9 +29,9 @@ const CardPedido = () => {
 
                     <div className='flex flex-wrap truncate '>
                         <div>
-                            <p className='mb-2'>Pizza Calabreza com borda</p>
+                            <p className='mb-2 font-bold'>Pizza Calabreza com borda</p>
                             <div className='flex justify-between'>
-                                <h3 className=''>Familia</h3>
+                                <h3 className='font-semibold'>Familia</h3>
                                 <h3 className='font-bold'>R$ 40,00</h3>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ const CardPedido = () => {
                     <div className='flex justify-between h-16'>
 
                         <div className='mt-3'>
-                            <Button className="bg-red-600 hover:bg-red-600 active:bg-gray-700 align-baseline">
+                            <Button className="bg-red-600 hover:bg-red-600 active:bg-gray-700 align-baseline  shadow-lg">
                                 <Trash2 className='text-white' />
                             </Button>
                         </div>
@@ -50,7 +50,7 @@ const CardPedido = () => {
                         <div className="flex items-center mb-">
 
                             <Button
-                                className="bg-transparent w-9 h-9 border-black border-2 text-black active:bg-gray-500"
+                                className="bg-transparent w-9 h-9 border-black border-2 text-black active:bg-gray-500  shadow-lg"
                                 size="icon"
                             >
                                 <ChevronLeft className="w-5 h-5 " />
@@ -64,7 +64,7 @@ const CardPedido = () => {
                             />
 
                             <Button
-                                className="bg-transparent w-9 h-9 border-black border-2 text-black active:bg-gray-500"
+                                className="bg-transparent w-9 h-9 border-black border-2 text-black active:bg-gray-500 shadow-lg"
                                 size="icon"
                             >
                                 <ChevronRight className="w-5 h-5" />

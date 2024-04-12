@@ -7,12 +7,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { ShoppingCartIcon } from '@heroicons/react/solid';
-import React from 'react';
+import { useState, React } from 'react';
 import CardPedido from "./produtos/card-pedido";
+import TipoEntrega from "./entrega/tipo-entrega";
 
 
 
 const Header = () => {
+
+    
+
+
     return (
         <Card className="bg-primary flex justify-between align-items-center p-3 rounded-none">
             <Link href="/">
@@ -21,8 +26,8 @@ const Header = () => {
 
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button className="bg-primary" size="icon" variant="outline">
-                        <ShoppingCart className="text-[#fff]" />
+                    <Button className="bg-primary shadow-lg" size="icon" variant="outline">
+                        <ShoppingCart className="text-[#fff] " />
                     </Button>
                 </SheetTrigger>
 
@@ -34,11 +39,13 @@ const Header = () => {
                             size="icon"
                             className="h-5 w-5 text-gray-500 mr-3"
                         />
-                        CARRINHO
+                        Carrinho
                     </Button>
 
                     <CardPedido className="" />
+                    <CardPedido className="" />
 
+                    <TipoEntrega/>
 
 
 
@@ -46,7 +53,7 @@ const Header = () => {
 
 
                 </SheetContent>
-                
+
             </Sheet>
         </Card>
     )
