@@ -6,6 +6,7 @@ const TipoEntrega = () => {
     const [entregaSelecionada, setEntregaSelecionada] = useState(null);
 
     const [nome, setNome] = useState('');
+    const [enderecoEntrega] = useState('');
     const [endereco] = useState('Av. Paulista, 1000 - São Paulo, SP, Brasil');
     const apiKey = 'AIzaSyAeF3V1LbYR11ybrgZxrObeU9oRCscP3s8';
     const [numero, setNumero] = useState('');
@@ -15,7 +16,7 @@ const TipoEntrega = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Dados do formulário:', { nome, endereco, numero, bairro, telefone, mensagem });
+        console.log('Dados do formulário:', { nome, enderecoEntrega, numero, bairro, telefone, mensagem });
         // onde enviar para um servidor ou realizar validações.
     };
 
@@ -96,9 +97,9 @@ const TipoEntrega = () => {
                         </div>
                         <div className="mb-4">
                             <Input
-                                id="endereco"
+                                id="enderecoEntrega"
                                 type="text"
-                                value={endereco}
+                                value={enderecoEntrega}
                                 onChange={(e) => setEndereco(e.target.value)}
                                 placeholder="Endereço de entrega"
                                 className="mt-1 px-3 py-2 block w-full border-gray-300 bg-white rounded-md focus:outline-none focus:border-primary focus:ring focus:ring-primary"
