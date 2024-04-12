@@ -93,7 +93,7 @@ const TipoEntrega = () => {
                             type="text"
                             value={telefone}
                             onChange={handleTelefoneChange}
-                            placeholder="Telefone"
+                            placeholder="Telefone / WhatsApp"
                             className="mt-1 px-3 py-2 block w-full border-gray-300 bg-white rounded-md focus:outline-none focus:border-primary focus:ring focus:ring-primary" />
                     </div>
                     <div className="mb-4">
@@ -104,11 +104,7 @@ const TipoEntrega = () => {
                             placeholder="Observação (máximo 400 caracteres)"
                             className="mt-1 px-3 py-2 block w-full border-gray-300 bg-white rounded-md focus:outline-none focus:border-primary focus:ring focus:ring-primary" />
                     </div>
-                    <Button 
-                    type="submit"
-                    className="bg-primary py-2 w-full rounded-md focus:outline-none mr-7 text-white font-mono shadow-lg font-bold"
-
-                    >Finalizar Pedido</Button>
+                    
                 </form>
             </div>
         </div>

@@ -10,6 +10,7 @@ import { ShoppingCartIcon } from '@heroicons/react/solid';
 import { React } from 'react';
 import CardPedido from "./produtos/card-pedido";
 import TipoEntrega from "./entrega/tipo-entrega";
+import ButtonFinalizar from "./btn-finalizarpedido";
 
 
 
@@ -50,7 +51,9 @@ const Header = () => {
 
 
 
+                <ButtonFinalizar/>
 
+                
                 </SheetContent>
 
             </Sheet>
