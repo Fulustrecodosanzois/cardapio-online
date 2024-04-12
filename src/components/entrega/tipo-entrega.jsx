@@ -69,7 +69,7 @@ const TipoEntrega = () => {
                             <iframe
                                 width="100%"
                                 className="shadow-lg"
-                                height="400"
+                                height="200"
                                 frameBorder="0"
                                 style={{ border: 0 }}
                                 src={generateMapURL(endereco)}
