@@ -43,14 +43,14 @@ const TipoEntrega = () => {
     return (
         <div className="mt-4">
             <h3 className="font-extrabold ps-2">Tipo de entrega:</h3>
-            <div className="flex p-5">
+            <div className="flex py-5  justify-around gap-3">
                 <Button
-                    className={`py-2 px-4 rounded-md focus:outline-none mr-7 text-white font-mono shadow-lg ${entregaSelecionada === 'entrega' ? 'bg-primary' : 'bg-gray-500'}`}
+                    className={`py-2 px-4 rounded-md focus:outline-none text-white font-mono shadow-lg ${entregaSelecionada === 'entrega' ? 'bg-primary' : 'bg-gray-500'}`}
                     onClick={() => setEntregaSelecionada('entrega')}>
                     Entrega
                 </Button>
                 <Button
-                    className={`py-2 px-4 rounded-md focus:outline-none mr-7 text-white font-mono shadow-lg ${entregaSelecionada === 'retirada' ? 'bg-primary' : 'bg-gray-500'}`}
+                    className={`py-2 px-4 rounded-md focus:outline-none text-white font-mono shadow-lg ${entregaSelecionada === 'retirada' ? 'bg-primary' : 'bg-gray-500'}`}
                     onClick={() => setEntregaSelecionada('retirada')}>
                     Retirada
                 </Button>
