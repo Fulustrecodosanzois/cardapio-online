@@ -12,6 +12,7 @@ import CardPedido from "./produtos/card-pedido";
 import TipoEntrega from "./entrega/tipo-entrega";
 import ButtonFinalizar from "./btn-finalizarpedido";
 import FormaPagamento from "./pagamento/forma-pagamento";
+import Total from "./pagamento/total";
 
 
 
@@ -45,16 +46,14 @@ const Header = () => {
                     <CardPedido className="" />
                     <CardPedido className="" />
 
-                    <TipoEntrega/>
-                    
-                    <FormaPagamento/>
+                    <TipoEntrega />
 
+                    <FormaPagamento />
 
+                    <Total />
 
+                    <ButtonFinalizar />
 
-                <ButtonFinalizar/>
-
-                
                 </SheetContent>
 
             </Sheet>
