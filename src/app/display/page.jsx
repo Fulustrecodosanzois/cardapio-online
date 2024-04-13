@@ -1,6 +1,6 @@
 "use client";
 
-import NomePrecoQuant from "@/components/nome-preco-quant";
+import ButtonFinalizar from "@/components/btn-finalizarpedido";
 import CardPedido from "@/components/produtos/card-pedido";
 import Image from "next/image";
 
@@ -15,7 +15,7 @@ const Display = () => {
 
             <CardPedido/>
 
-
+            <ButtonFinalizar/>
 
 
 
