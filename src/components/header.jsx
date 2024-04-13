@@ -8,11 +8,10 @@ import Link from 'next/link';
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { ShoppingCartIcon } from '@heroicons/react/solid';
 import { React } from 'react';
-import CardPedido from "./produtos/card-pedido";
 import TipoEntrega from "./entrega/tipo-entrega";
 import ButtonFinalizar from "./btn-finalizarpedido";
 import FormaPagamento from "./pagamento/forma-pagamento";
-import Total from "./pagamento/total";
+import CardPedidoDelete from "./produtos/card-pedido-delete";
 
 
 
@@ -43,17 +42,19 @@ const Header = () => {
                         Carrinho
                     </Button>
 
-                    <CardPedido className="" />
-                    <CardPedido className="" />
+                    <CardPedidoDelete className="" />
+                    <CardPedidoDelete className="" />
 
-                    <TipoEntrega />
+                    <TipoEntrega/>
+                    
+                    <FormaPagamento/>
 
-                    <FormaPagamento />
 
-                    <Total />
 
-                    <ButtonFinalizar />
 
+                <ButtonFinalizar/>
+
+                
                 </SheetContent>
 
             </Sheet>
