@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import { getDatabase, ref, onValue, off } from "firebase/database";
 import firebaseApp from "@/lib/firebase";
-import CategoriaItem from "./categoria-item";
+import CategoriaItem from './categoria-item';
 
-const Categorias = () => {
+const Categorias = ({ onCategoriaSelecionada }) => {
     const [categorias, setCategorias] = useState([]);
 
     useEffect(() => {
@@ -30,10 +32,14 @@ const Categorias = () => {
         };
     }, []);
 
+    const handleClickCategoria = (categoria) => {
+        onCategoriaSelecionada(categoria);
+    };
+
     return (
         <div className="grid grid-cols-2 gap-y-2 gap-x-4 mt-5">
             {categorias.map((categoria) => (
-                <CategoriaItem key={categoria.nome} categoria={categoria} />
+                <CategoriaItem key={categoria.id} categoria={categoria} onClickCategoria={handleClickCategoria} />
             ))}
         </div>
     );
