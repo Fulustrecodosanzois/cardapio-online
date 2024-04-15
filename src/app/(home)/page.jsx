@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import CategoriasCarousel from "@/components/carousel-principais";
 import Categorias from "@/components/categorias";
 import Image from "next/image"
+import Link from "next/link";
+
 
 export default function Home() {
     const [categoriaSelecionada, setCategoriaSelecionada] = useState("1_Pizza Tradicional");
@@ -23,8 +25,9 @@ export default function Home() {
                 sizes="100vw"
             />
             <Categorias onCategoriaSelecionada={handleCategoriaSelecionada} />
-
-            <CategoriasCarousel categoriaId={categoriaSelecionada} displayType="carousel" />
+            <Link href="/display/[slug]/page" as={`/display/${categoriaSelecionada}`}>
+                <CategoriasCarousel categoriaId={categoriaSelecionada} displayType="carousel" />
+            </Link>
         </div>
     )
 };
