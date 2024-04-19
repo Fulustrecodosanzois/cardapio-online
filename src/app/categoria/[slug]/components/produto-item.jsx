@@ -45,7 +45,7 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
         <Link href={`/produto/${produto.Slug}`}>
             <Card className="flex flex-col border-hidden p-[2px]">
                 <div className="w-[167px] h-[228px] rounded-lg">
-                    <div className="flex align-items-center  justify-center rounded-lg gap-3 bg-secondary-foreground w-[167px] h-[170px]">
+                    <div className="flex align-items-center  justify-center rounded-lg gap-3 bg-secondary-foreground w-[163px] h-[170px]">
                         <Image
                             src={produto.imgUrl}
                             alt={produto.Nome}
