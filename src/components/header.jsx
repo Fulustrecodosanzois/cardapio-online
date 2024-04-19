@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from 'react';
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { ChevronLeft, ShoppingCart } from "lucide-react";
@@ -13,9 +12,8 @@ import TipoEntrega from "./entrega/tipo-entrega";
 import ButtonFinalizar from "./btn-finalizarpedido";
 import FormaPagamento from "./pagamento/forma-pagamento";
 import CardPedidoDelete from "./produtos/card-pedido-delete";
-
-
 import { useRouter } from "next/navigation";
+import Pedido from './produtos/card-pedido';
 
 const Header = () => {
     const router = useRouter();
@@ -58,7 +56,7 @@ const Header = () => {
                     </Button>
 
                     <CardPedidoDelete className="" />
-                    <CardPedidoDelete className="" />
+                    <Pedido className="" />
 
                     <TipoEntrega/>
                     
