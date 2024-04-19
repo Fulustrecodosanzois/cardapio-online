@@ -40,7 +40,7 @@ const CardPedidoDelete = () => {
                     </div>
 
 
-                    <div className='flex justify-between h-16'>
+                    <div className='flex justify-between'>
 
                         <div className='mt-3'>
                             <Button className="bg-red-600 hover:bg-red-600 active:bg-gray-700 align-baseline  shadow-lg">
@@ -49,7 +49,7 @@ const CardPedidoDelete = () => {
                         </div>
 
 
-                        <div className="flex items-center mb-">
+                        <div className="flex items-center">
 
                             <Button
                                 className="bg-transparent w-9 h-9 border-black border-2 text-black active:bg-gray-500  shadow-lg"

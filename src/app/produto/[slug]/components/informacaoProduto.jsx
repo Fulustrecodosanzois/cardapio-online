@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useCarrinho } from '@/providers/carrinhoContextApi';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const InformacaoProduto = ({ produto }) => {
   const [quantidade, setQuantidade] = useState(1);
+  const { addProdutoAoCarrinho } = useCarrinho();
 
   const aumentarQuantidade = () => {
     setQuantidade(quantidade + 1);
@@ -18,14 +20,17 @@ const InformacaoProduto = ({ produto }) => {
 
   const precoTotal = (produto.PrecoF * quantidade).toFixed(2);
 
+  const handleAddAoCarrinho = () => {
+    addProdutoAoCarrinho({ ...produto, quantidade }); 
+  };
+
   return (
     <div className="p-5 space-y-4">
+      <p className='text-primary text-lg'>{produto.Nome}</p>
       <div className='flex gap-4'>
-        <p className='text-primary text-lg'>{produto.Nome}</p>
-        <span className='text-secondary-foreground-light'>Familia</span>
+        <span className='font-bold text-secondary text-xl'>R$ {precoTotal}</span>
+        <span className='text-secondary-foreground-light'>Familia *será dinâmico</span>
       </div>
-      
-      <span className='font-bold text-secondary text-xl'>R$ {precoTotal}</span>
       <div className='flex gap-3'>
         <Button
           className="bg-transparent text-primary hover:text-primary border-primary"
@@ -35,11 +40,9 @@ const InformacaoProduto = ({ produto }) => {
         >
           <ChevronLeft />
         </Button>
-
         <div className="text-primary w-[15] h-[15] flex justify-center items-center">
           <span className='text-xl'>{quantidade}</span>
         </div>
-
         <Button
           className="bg-transparent text-primary hover:text-primary border-primary"
           size="icon"
@@ -58,7 +61,8 @@ const InformacaoProduto = ({ produto }) => {
         <p>Deseja adicionar Borda?</p>
         <Switch />
       </div>
-      <Button className="w-full rounded-[10px] text-card uppercase hover:bg-primary">
+      <Button className="w-full rounded-[10px] text-card uppercase hover:bg-primary"
+        onClick={handleAddAoCarrinho}>
         Adicionar ao carrinho
       </Button>
     </div>
