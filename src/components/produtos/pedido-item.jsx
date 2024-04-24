@@ -7,7 +7,7 @@ const PedidoItem = ({ produto }) => {
     return (
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4 w-full pr-4">
-                <div className=" sm:w-auto sm:mb-0">
+                <div className="flex justify-center items-center rounded-lg bg-white">
                     <Image
                         objectFit="fill"
                         src={produto.imgUrl}

@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCarrinho } from '@/providers/carrinhoContextApi';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const InformacaoProduto = ({ produto }) => {
   const [quantidade, setQuantidade] = useState(1);
@@ -21,7 +24,17 @@ const InformacaoProduto = ({ produto }) => {
   const precoTotal = (produto.PrecoF * quantidade).toFixed(2);
 
   const handleAddAoCarrinho = () => {
-    addProdutoAoCarrinho({ ...produto, quantidade }); 
+    addProdutoAoCarrinho({ ...produto, quantidade });
+    toast.success(`${produto.Nome} adicionado(a) ao carrinho`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      }); 
   };
 
   return (
@@ -65,6 +78,18 @@ const InformacaoProduto = ({ produto }) => {
         onClick={handleAddAoCarrinho}>
         Adicionar ao carrinho
       </Button>
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
