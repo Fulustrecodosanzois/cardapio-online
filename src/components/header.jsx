@@ -12,27 +12,32 @@ import TipoEntrega from "./entrega/tipo-entrega";
 import ButtonFinalizar from "./btn-finalizarpedido";
 import FormaPagamento from "./pagamento/forma-pagamento";
 import CardPedidoDelete from "./produtos/card-pedido-delete";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Pedido from './produtos/card-pedido';
 
 const Header = () => {
     const router = useRouter();
+    const pathname = usePathname();
 
     const handleClick = () => {
-        router.push('/');
-    };
+        router.back();
+    }; 
+    const isHomePage = pathname === '/';
+    
 
     return (  
         <Card className="bg-primary flex justify-between align-items-center p-[30px] rounded-none">
-            <Button
-                className="bg-primary text-white hover:text-white hidden"
-                size="icon"
-                variant="outline"
-                onClick={handleClick}
-            >
-                <ChevronLeft />
-            </Button>
-
+            {!isHomePage && (
+                <Button
+                    className="bg-primary text-white hover:text-white"
+                    size="icon"
+                    variant="outline"
+                    onClick={handleClick}
+                >
+                    <ChevronLeft />
+                </Button>
+            )}
+            
             <Link href="/">
                 <Image src="/logo.png" alt="Logo" width={78.66} height={39} />
             </Link>
@@ -62,12 +67,8 @@ const Header = () => {
                     
                     <FormaPagamento/>
 
-
-
-
-                <ButtonFinalizar/>
-
-                
+                    <ButtonFinalizar/>
+                    
                 </SheetContent>
 
             </Sheet>
@@ -76,5 +77,3 @@ const Header = () => {
 }
 
 export default Header;
-
-
