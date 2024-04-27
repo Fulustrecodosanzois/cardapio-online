@@ -1,9 +1,18 @@
 
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { ChevronLeft, ChevronRight, Trash, Trash2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Trash2 } from "lucide-react";
+import { useCarrinho } from '@/providers/carrinhoContextApi';
+
 
 const PedidoItem = ({ produto }) => {
+
+    const { removeProdutoDoCarrinho } = useCarrinho();
+
+    const handleRemoverProduto = () => {
+        removeProdutoDoCarrinho(produto.id);
+    };
+
     return (
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4 w-full pr-4">
@@ -26,7 +35,7 @@ const PedidoItem = ({ produto }) => {
                         
                         <div className='flex justify-between w-full '>
                             <h3 className='font-semibold'>Familia</h3>
-                            <h3 className='font-bold'>R$ {produto.PrecoF.toFixed(2)}</h3>
+                            <h3 className='font-bold'>R$ {produto.PrecoF ? produto.PrecoF.toFixed(2) : 'N/A'}</h3>
                         </div>
                         
                     </div>
@@ -34,7 +43,8 @@ const PedidoItem = ({ produto }) => {
                     <div className='flex justify-between h-16'>
 
                         <div className='mt-3'>
-                            <Button className="bg-secondary hover:bg-red-600 active:bg-red-800 align-baseline  shadow-lg">
+                            <Button className="bg-secondary hover:bg-red-600 active:bg-red-800 align-baseline  shadow-lg"
+                            onClick={handleRemoverProduto}>
                                 <Trash2 className='text-white' />
                             </Button>
                         </div>
