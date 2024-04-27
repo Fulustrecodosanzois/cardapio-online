@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const CarrinhoContext = createContext();
 
@@ -9,15 +9,28 @@ export function useCarrinho() {
 }
 
 const CarrinhoProvider = ({ children }) => {
+  const [produtosCarregados, setProdutosCarregados] = useState(false);
   const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    const storedProdutos = JSON.parse(localStorage.getItem("@cardapio/carrinho-produtos") || "[]");
+    setProdutos(storedProdutos);
+    setProdutosCarregados(true);
+  }, []);
+  
+  useEffect(() => {
+    if (produtosCarregados) {
+      localStorage.setItem("@cardapio/carrinho-produtos", JSON.stringify(produtos));
+    }
+  }, [produtos, produtosCarregados]);
 
   const addProdutoAoCarrinho = (produto) => {
     const updatedProdutos = [...produtos, produto];
     setProdutos(updatedProdutos);
   };
 
-  const removeProdutoDoCarrinho = (productId) => {
-    const updatedProdutos = produtos.filter((produto) => produto.id !== productId);
+  const removeProdutoDoCarrinho = (produtoId) => {
+    const updatedProdutos = produtos.filter((produto) => produto.id !== produtoId);
     setProdutos(updatedProdutos);
   };
 
