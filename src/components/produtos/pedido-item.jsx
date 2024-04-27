@@ -15,15 +15,14 @@ const PedidoItem = ({ produto }) => {
 
     return (
         <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4 w-full pr-4">
-                <div className="flex justify-center items-center rounded-lg bg-white">
+            <div className="flex items-center gap-4 w-full px-4">
+                <div className="flex justify-center items-center rounded-lg bg-white h-[100px] w-[100px]">
                     <Image
-                        objectFit="fill"
                         src={produto.imgUrl}
                         alt={produto.Nome}
                         width={100}
                         height={100}
-                        className="w-full"
+                        sizes="100vw"
                     />
                 </div>
                 
