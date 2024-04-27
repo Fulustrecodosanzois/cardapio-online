@@ -9,22 +9,8 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
     let precoFinal = preco;
 
     
-    if (categoriaSelecionada === '4_Bebidas') {
-
-        precoFinal = produto.Preco2L;
-        
-        // if (tamanhoSelecionado === '1L') {
-        //     precoFinal = produto.Preco1L;
-        // } else if (tamanhoSelecionado === '2L') {
-        //     precoFinal = produto.Preco2L;
-        // } else if (tamanhoSelecionado === 'latinha') {
-        //     precoFinal = produto.Latinha;
-        // }
-
-    } else if (categoriaSelecionada === '3_Lanches') {
-        
-        precoFinal = produto.Preco;
-    } else if ((categoriaSelecionada === '1_Pizza Tradicional' || categoriaSelecionada === '2_Pizza Especial') && tamanhoSelecionado) {
+    if (categoriaSelecionada === '1_Pizza Tradicional' || categoriaSelecionada === '2_Pizza Especial') {
+        tamanhoSelecionado = tamanhoSelecionado || 'familia'; 
 
         switch (tamanhoSelecionado) {
             case 'familia':
@@ -39,13 +25,33 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
             default:
                 break;
         }
+    } else if (categoriaSelecionada === '4_Bebidas') {
+        tamanhoSelecionado = tamanhoSelecionado || '1_litro';
+
+        switch (tamanhoSelecionado) {
+            case '1_litro':
+                precoFinal = produto.Preco1L;
+                break;
+            case '2_litros':
+                precoFinal = produto.Preco2L;
+                break;
+            case 'latinha':
+                precoFinal = produto.PrecoLatinha;
+                break;
+            default:
+                break;
+        }
+    } else if (categoriaSelecionada === '3_Lanches') {
+        precoFinal = produto.Preco;
     }
+
+    const precoFormatado = typeof precoFinal === 'number' ? `R$ ${precoFinal.toFixed(2)}` : 'indisponível';
 
     return (
         <Link href={`/produto/${produto.Slug}`}>
             <Card className="flex flex-col border-hidden p-[2px]">
                 <div className="w-[167px] h-[228px] rounded-lg">
-                    <div className="flex align-items-center  justify-center rounded-lg gap-3 bg-secondary-foreground w-[163px] h-[170px]">
+                    <div className="flex align-items-center  justify-center rounded-lg gap-3 bg-secondary-foreground w-[167px] h-[170px]">
                         <Image
                             src={produto.imgUrl}
                             alt={produto.Nome}
@@ -56,13 +62,11 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
                         />
                     </div>
                     <div className="rounded-lg bg-accent flex flex-col align-items-center justify-center h-[58px]">
-
                         <p className="text-left px-3 text-sm font-semibold truncate">{produto.Nome}</p>
-                        
                         <div className="flex justify-between items-baseline pl-2">
-                            <p className="text-left font-bold text-secondary">R$ {precoFinal}</p>
-                            <Button className="bg-accent border-primary mr-1" size="icon" variant="outline">
-                                <ShoppingCart className="text-primary"/>
+                            <p className="text-left font-bold text-secondary">{precoFormatado}</p>
+                            <Button className="bg-accent border-primary" size="icon" variant="outline">
+                                <ShoppingCart className="text-primary" />
                             </Button>
                         </div>
                     </div>

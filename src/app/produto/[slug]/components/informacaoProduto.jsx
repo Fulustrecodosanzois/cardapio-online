@@ -76,6 +76,7 @@ const InformacaoProduto = ({ produto }) => {
       </div>
       <Button className="w-full rounded-[10px] text-card uppercase hover:bg-primary"
         onClick={handleAddAoCarrinho}>
+        {console.log(produto.Id)}
         Adicionar ao carrinho
       </Button>
       <ToastContainer

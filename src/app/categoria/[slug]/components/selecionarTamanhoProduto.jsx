@@ -4,15 +4,12 @@ import firebaseApp from "@/lib/firebase";
 import ButtonTipoBebida from './buttonBebida';
 import ButtonTamanhoPizza from './buttonPizza';
 
-const SelecionarTamanhoProduto = ({ setPreco, categoriaSelecionada }) => {
-    const [tipoBebida, setTipoBebida] = useState(null);
+const SelecionarTamanhoProduto = ({ categoriaSelecionada }) => {
 
     const handleClick = (selectedOption) => {
-        if (categoriaSelecionada === '4_bebidas') {
-            setTipoBebida(selectedOption);
+        if (categoriaSelecionada === 'bebidas') {
             fetchPrecoFromDatabase(selectedOption); 
         } else {
-            setTipoBebida(null);
             fetchPrecoFromDatabase(categoriaSelecionada); 
         }
     };
@@ -30,15 +27,20 @@ const SelecionarTamanhoProduto = ({ setPreco, categoriaSelecionada }) => {
     };
 
     return (
-        <div className="my-4">
-            <h2 className="font-bold mb-1">Escolha o tamanho</h2>
-            
-            {categoriaSelecionada === '4_bebidas' ? (
-                <ButtonTipoBebida handleClick={handleClick} tipoBebida={tipoBebida} />
-            ) : (
+        <div className={`my-4 ${categoriaSelecionada === 'lanches' ? 'hidden' : ''}`}>
+        {categoriaSelecionada !== 'bebidas' && (
+            <div>
+                <h2 className="font-bold mb-1">Escolha o tamanho</h2>
                 <ButtonTamanhoPizza handleClick={handleClick} />
-            )}
-        </div>
+            </div>
+        )}
+        {categoriaSelecionada === 'bebidas' && (
+            <div>
+                <h2 className="font-bold mb-1">Escolha o tipo de bebida</h2>
+                <ButtonTipoBebida handleClick={handleClick} />
+            </div>
+        )}
+    </div>
     );
 };
 

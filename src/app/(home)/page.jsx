@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import CategoriasCarousel from "@/components/carousel-principais";
 import Categorias from "@/components/categorias";
 import Image from "next/image"
-import Link from "next/link";
 
 
 export default function Home() {
@@ -25,9 +24,9 @@ export default function Home() {
                 sizes="100vw"
             />
             <Categorias onCategoriaSelecionada={handleCategoriaSelecionada} />
-            <Link href="/display/[slug]/page" as={`/display/${categoriaSelecionada}`}>
-                <CategoriasCarousel categoriaId={categoriaSelecionada} displayType="carousel" />
-            </Link>
+
+            <CategoriasCarousel categoriaId={categoriaSelecionada} displayType="carousel" />
+            
         </div>
     )
 };

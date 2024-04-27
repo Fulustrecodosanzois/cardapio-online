@@ -61,7 +61,8 @@ const Header = () => {
                     </Button>
 
                     <CardPedidoDelete className="" />
-                    <Pedido className="" />
+                    
+                    <Pedido />
 
                     <TipoEntrega/>
                     

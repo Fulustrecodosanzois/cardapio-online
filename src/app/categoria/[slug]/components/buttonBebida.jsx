@@ -1,15 +1,22 @@
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useState } from "react";
 
-const ButtonTipoBebida = ({ handleClick, tipoBebida }) => {
+const ButtonTipoBebida = ({ handleClick }) => {
+
+    const [selectedTamanho, setSelectedTamanho] = useState("1_litro");
+    
+    const handleButtonClick = (tamanho) => {
+        setSelectedTamanho(tamanho);
+        handleClick(tamanho, `Preco${tamanho.charAt(0).toUpperCase()}${tamanho.slice(1)}`);
+    };
+
     return (
         <div className="flex gap-3">
             <Button
                 variant="outline"
                 size="sm"
-                className={`border-primary flex items-center justify-center gap-2 rounded-md bg-secondary-foreground text-primary active:bg-primary-foreground active:text-secondary-foreground ${tipoBebida === '1_litro' ? 'bg-primary-foreground text-secondary-foreground' : 'hover:bg-primary-foreground hover:text-secondary-foreground'}`}
-                onClick={() => handleClick('1_litro')}
-                disabled={tipoBebida === '1_litro'}
+                className={`border-primary flex items-center justify-center gap-2 rounded-md bg-secondary-foreground text-primary active:bg-primary-foreground active:text-secondary-foreground hover:bg-primary-foreground hover:text-secondary-foreground ${selectedTamanho === '1_litro' ? 'bg-primary-foreground text-secondary-foreground' : ''}`}
+                onClick={() => handleButtonClick('1_litro')}
             >
                 1 Litro
             </Button>
@@ -17,9 +24,8 @@ const ButtonTipoBebida = ({ handleClick, tipoBebida }) => {
             <Button
                 variant="outline"
                 size="sm"
-                className={`border-primary flex items-center justify-center gap-2 rounded-lg bg-secondary-foreground text-primary active:bg-primary-foreground active:text-secondary-foreground ${tipoBebida === '2_litros' ? 'bg-primary-foreground text-secondary-foreground' : 'hover:bg-primary-foreground hover:text-secondary-foreground'}`}
-                onClick={() => handleClick('2_litros')}
-                disabled={tipoBebida === '2_litros'}
+                className={`border-primary flex items-center justify-center gap-2 rounded-lg bg-secondary-foreground text-primary active:bg-primary-foreground active:text-secondary-foreground hover:bg-primary-foreground hover:text-secondary-foreground ${selectedTamanho === '2_litros' ? 'bg-primary-foreground text-secondary-foreground' : ''}`}
+                onClick={() => handleButtonClick('2_litros')}
             >
                 2 Litros
             </Button>
@@ -27,11 +33,10 @@ const ButtonTipoBebida = ({ handleClick, tipoBebida }) => {
             <Button
                 variant="outline"
                 size="sm"
-                className={`border-primary flex items-center justify-center gap-2 rounded-lg bg-secondary-foreground text-primary active:bg-primary-foreground active:text-secondary-foreground ${tipoBebida === 'latinhas' ? 'bg-primary-foreground text-secondary-foreground' : 'hover:bg-primary-foreground hover:text-secondary-foreground'}`}
-                onClick={() => handleClick('latinhas')}
-                disabled={tipoBebida === 'latinhas'}
+                className={`border-primary flex items-center justify-center gap-2 rounded-lg bg-secondary-foreground text-primary active:bg-primary-foreground active:text-secondary-foreground hover:bg-primary-foreground hover:text-secondary-foreground ${selectedTamanho === 'latinha' ? 'bg-primary-foreground text-secondary-foreground' : ''}`}
+                onClick={() => handleButtonClick('latinha')}
             >
-                Latinhas
+                Latinha
             </Button>
         </div>
     );

@@ -10,7 +10,6 @@ import SelecionarTamanhoProduto from './components/selecionarTamanhoProduto';
 
 const CategoriaProdutos = ({ params }) => {
   const [produtos, setProdutos] = useState([]);
-  const [precoSelecionado, setPrecoSelecionado] = useState(null);
   
   useEffect(() => {
     const fetchProdutos = async () => {
@@ -54,9 +53,11 @@ const CategoriaProdutos = ({ params }) => {
 
         </Badge>
 
-        <SelecionarTamanhoProduto setPrecoSelecionado={setPrecoSelecionado} categoriaSelecionada={params.slug}/>
+        <SelecionarTamanhoProduto categoriaSelecionada={params.slug}/>
         
-        <ProdutosPorCategoria produtos={produtos} />
+        <ProdutosPorCategoria 
+          produtos={produtos}
+        />
 
     </div>
   );
