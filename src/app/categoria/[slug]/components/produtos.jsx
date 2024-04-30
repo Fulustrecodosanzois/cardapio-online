@@ -1,7 +1,7 @@
 import React from 'react';
 import ProdutoItem from './produto-item';
 
-const ProdutosPorCategoria = ({ produtos }) => {
+const ProdutosPorCategoria = ({ produtos, categoriaSelecionada }) => {
     return (
         <div>
             <h1 className='font-bold uppercase px-1 my-5'>cardápio</h1>
@@ -10,6 +10,7 @@ const ProdutosPorCategoria = ({ produtos }) => {
                     <ProdutoItem 
                         key={produto.id}
                         produto={produto}
+                        categoriaSelecionada={categoriaSelecionada}
                     />
                 ))}
             </div>
@@ -18,4 +19,3 @@ const ProdutosPorCategoria = ({ produtos }) => {
 }
 
 export default ProdutosPorCategoria;
-

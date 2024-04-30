@@ -10,7 +10,8 @@ import SelecionarTamanhoProduto from './components/selecionarTamanhoProduto';
 
 const CategoriaProdutos = ({ params }) => {
   const [produtos, setProdutos] = useState([]);
-  
+  const [categoriaId, setCategoriaId] = useState(null);
+
   useEffect(() => {
     const fetchProdutos = async () => {
       const db = getDatabase(firebaseApp);
@@ -22,6 +23,7 @@ const CategoriaProdutos = ({ params }) => {
       if (categoria.exists()) {
         categoria.forEach((child) => {
           const categoriaId = child.key;
+          setCategoriaId(categoriaId);
           const produtosRef = ref(db, `categoria/${categoriaId}/produtos`);
           
           get(produtosRef).then((produtos) => {
@@ -57,6 +59,7 @@ const CategoriaProdutos = ({ params }) => {
         
         <ProdutosPorCategoria 
           produtos={produtos}
+          categoriaSelecionada={categoriaId}
         />
 
     </div>

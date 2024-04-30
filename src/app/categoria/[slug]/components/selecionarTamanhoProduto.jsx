@@ -5,6 +5,7 @@ import ButtonTipoBebida from './buttonBebida';
 import ButtonTamanhoPizza from './buttonPizza';
 
 const SelecionarTamanhoProduto = ({ categoriaSelecionada }) => {
+    const [preco, setPreco] = useState(null);
 
     const handleClick = (selectedOption) => {
         if (categoriaSelecionada === 'bebidas') {
@@ -14,13 +15,14 @@ const SelecionarTamanhoProduto = ({ categoriaSelecionada }) => {
         }
     };
 
-    const fetchPrecoFromDatabase = (categoryId) => {
+    const fetchPrecoFromDatabase = (categoriaId) => {
         const db = getDatabase(firebaseApp);
-        const categoriaRef = ref(db, `categoria/${categoryId}/produtos`);
+        const categoriaRef = ref(db, `categoria/${categoriaId}/produtos`);
 
         onValue(categoriaRef, (capturarValor) => {
             const categoriaData = capturarValor.val();
             if (categoriaData) {
+                // Atualiza o estado do preço com o novo valor
                 setPreco(categoriaData.preco);
             }
         });

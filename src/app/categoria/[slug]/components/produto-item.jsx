@@ -6,8 +6,7 @@ import Link from "next/link";
 
 
 const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado }) => {
-    let precoFinal = preco;
-
+    let precoFinal = produto.preco;
     
     if (categoriaSelecionada === '1_Pizza Tradicional' || categoriaSelecionada === '2_Pizza Especial') {
         tamanhoSelecionado = tamanhoSelecionado || 'familia'; 
@@ -46,6 +45,9 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
     }
 
     const precoFormatado = typeof precoFinal === 'number' ? `R$ ${precoFinal.toFixed(2)}` : 'indisponível';
+
+    {console.log('PrecoFinal:', precoFinal);
+    console.log('precoFormatado', precoFormatado);}
 
     return (
         <Link href={`/produto/${produto.Slug}`}>
