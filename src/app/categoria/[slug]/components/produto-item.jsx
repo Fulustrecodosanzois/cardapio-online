@@ -49,7 +49,7 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
 
     return (
         <Link href={`/produto/${produto.Slug}`}>
-            <Card className="flex flex-col border-hidden p-[4px]">
+            <Card className="flex flex-col border-hidden p-[2px]">
                 <div className="flex justify-center flex-col w-[167px] h-[228px] rounded-lg">
                     <div className="flex align-items-center  justify-center rounded-lg gap-3 bg-secondary-foreground w-[160px] h-[170px]">
                         <Image
