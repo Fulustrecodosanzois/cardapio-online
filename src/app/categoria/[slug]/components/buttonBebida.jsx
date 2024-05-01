@@ -7,7 +7,7 @@ const ButtonTipoBebida = ({ handleClick }) => {
     
     const handleButtonClick = (tamanho) => {
         setSelectedTamanho(tamanho);
-        handleClick(tamanho, `Preco${tamanho.charAt(0).toUpperCase()}${tamanho.slice(1)}`);
+        handleClick(tamanho);
     };
 
     return (
