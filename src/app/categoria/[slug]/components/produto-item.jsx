@@ -25,13 +25,13 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
                 break;
         }
     } else if (categoriaSelecionada === '4_Bebidas') {
-        tamanhoSelecionado = tamanhoSelecionado || '1_litro';
+        tamanhoSelecionado = tamanhoSelecionado || '1 litro';
 
         switch (tamanhoSelecionado) {
-            case '1_litro':
+            case '1 litro':
                 precoFinal = produto.Preco1L;
                 break;
-            case '2_litros':
+            case '2 litros':
                 precoFinal = produto.Preco2L;
                 break;
             case 'latinha':
@@ -51,7 +51,13 @@ const ProdutoItem = ({ produto, preco, categoriaSelecionada, tamanhoSelecionado 
     console.log('Tamanho selecionado:', tamanhoSelecionado);}
 
     return (
-        <Link href={`/produto/${produto.Slug}`}>
+        <Link href={{
+                pathname:`/produto/${produto.Slug}`,
+                query: {
+                    tamanho: `${tamanhoSelecionado}`,
+                    preco: `${precoFinal}`,
+                }
+            }}>
             <Card className="flex flex-col border-hidden p-[2px]">
                 <div className="flex justify-center flex-col w-[167px] h-[228px] rounded-lg">
                     <div className="flex align-items-center  justify-center rounded-lg gap-3 bg-secondary-foreground w-[160px] h-[170px]">

@@ -6,8 +6,9 @@ import firebaseApp from '@/lib/firebase';
 import ImagemProduto from './components/imagemProduto';
 import InformacaoProduto from './components/informacaoProduto';
 
-const SobreProduto = ({ params }) => {
+const SobreProduto = ({ params, searchParams }) => {
   const [produto, setProduto] = useState(null);
+  console.log(searchParams)
 
   useEffect(() => {
     const fetchProdutoId = async () => {
@@ -54,7 +55,11 @@ const SobreProduto = ({ params }) => {
     {produto && (
       <>
         <ImagemProduto produto={produto} />
-        <InformacaoProduto produto={produto} />        
+        <InformacaoProduto 
+          produto={produto}
+          tamanho={searchParams.tamanho}
+          preco={searchParams.preco}
+        />        
       </>
     )}
   </div>

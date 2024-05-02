@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const InformacaoProduto = ({ produto }) => {
+const InformacaoProduto = ({ produto, tamanho, preco }) => {
   const [quantidade, setQuantidade] = useState(1);
   const { addProdutoAoCarrinho } = useCarrinho();
 
@@ -20,14 +20,14 @@ const InformacaoProduto = ({ produto }) => {
       setQuantidade(quantidade - 1);
     }
   };
-
-  const precoTotal = (produto.PrecoF * quantidade).toFixed(2);
+  
+  const precoTotal = (preco * quantidade).toFixed(2);
 
   const handleAddAoCarrinho = () => {
     addProdutoAoCarrinho({ ...produto, quantidade });
     toast.success(`${produto.Nome} adicionado(a) ao carrinho`, {
       position: "top-right",
-      autoClose: 1000,
+      autoClose: 500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -42,7 +42,7 @@ const InformacaoProduto = ({ produto }) => {
       <p className='text-primary text-lg'>{produto.Nome}</p>
       <div className='flex gap-4'>
         <span className='font-bold text-secondary text-xl'>R$ {precoTotal}</span>
-        <span className='text-secondary-foreground-light'>Familia *será dinâmico</span>
+        <span className='text-secondary-foreground-light'>{tamanho}</span>
       </div>
       <div className='flex gap-3'>
         <Button
@@ -76,12 +76,11 @@ const InformacaoProduto = ({ produto }) => {
       </div>
       <Button className="w-full rounded-[10px] text-card uppercase hover:bg-primary"
         onClick={handleAddAoCarrinho}>
-        {console.log(produto.Id)}
         Adicionar ao carrinho
       </Button>
       <ToastContainer
         position="top-right"
-        autoClose={1000}
+        autoClose={500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
