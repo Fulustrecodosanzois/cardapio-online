@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const ButtonTipoBebida = ({ handleClick }) => {
 
-    const [selectedTamanho, setSelectedTamanho] = useState("1_litro");
+    const [selectedTamanho, setSelectedTamanho] = useState("1 litro");
     
     const handleButtonClick = (tamanho) => {
         setSelectedTamanho(tamanho);

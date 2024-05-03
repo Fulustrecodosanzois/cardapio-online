@@ -10,6 +10,7 @@ const PedidoItem = ({ produto }) => {
     const preco = searchParams.get("preco")
     const tamanho = searchParams.get("tamanho")
     const precoTotal = (preco * produto.quantidade).toFixed(2);
+    console.log(produto.categoriaId)
 
     const { removeProdutoDoCarrinho } = useCarrinho();
 
