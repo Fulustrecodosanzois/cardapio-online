@@ -3,9 +3,13 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight, Trash2 } from "lucide-react";
 import { useCarrinho } from '@/providers/carrinhoContextApi';
-
+import { useSearchParams } from "next/navigation";
 
 const PedidoItem = ({ produto }) => {
+    const searchParams = useSearchParams();
+    const preco = searchParams.get("preco")
+    const tamanho = searchParams.get("tamanho")
+    const precoTotal = (preco * produto.quantidade).toFixed(2);
 
     const { removeProdutoDoCarrinho } = useCarrinho();
 
@@ -33,8 +37,8 @@ const PedidoItem = ({ produto }) => {
                         <p className='mb-2 font-bold'>{produto.Nome}</p>
                         
                         <div className='flex justify-between w-full '>
-                            <h3 className='font-semibold'>Familia</h3>
-                            <h3 className='font-bold'>R$ {produto.PrecoF ? produto.PrecoF.toFixed(2) : 'N/A'}</h3>
+                            <h3 className='font-semibold'>{tamanho}</h3>
+                            <h3 className='font-bold'>R$ {precoTotal}</h3>
                         </div>
                         
                     </div>

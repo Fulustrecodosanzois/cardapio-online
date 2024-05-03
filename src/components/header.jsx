@@ -60,7 +60,7 @@ const Header = () => {
                         Carrinho
                     </Button>
 
-                    <CardPedidoDelete className="" />
+                    {/* <CardPedidoDelete className="" /> */}
                     
                     <Pedido />
 
